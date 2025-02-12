@@ -26,6 +26,7 @@ struct IndexPQ {
     bool empty() const { return size_ == 0; }
     int size() const { return size_; }
     int count(int i) const { return qp[i] != -1; }
+    T operator[](int i) const { return keys[qp[i]]; }
 private:
     int size_{};
     std::vector<T> keys;
