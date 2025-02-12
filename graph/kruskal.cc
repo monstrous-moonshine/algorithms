@@ -7,7 +7,7 @@ struct KruskalMST {
     std::vector<Edge> mst;
     KruskalMST(const EdgeWeightedGraph &graph) {
         std::priority_queue<Edge, std::vector<Edge>, std::greater<Edge>> pq;
-        for (auto &&e : graph.edges) pq.push(e);
+        for (auto &&e : graph.edges()) pq.push(e);
         UnionFind uf(graph.V);
         while (!pq.empty() && mst.size() < graph.V - 1) {
             auto e = pq.top();
